@@ -5,6 +5,7 @@ const { fbdl2 } = require("vihangayt-fbdl");
 
 const getTikTok = async (req, res) => {
   const { url } = req.params;
+  console.log(url);
   const result = await tiktokDl(decodeURIComponent(url));
   return res.status(200).json(result);
 };
