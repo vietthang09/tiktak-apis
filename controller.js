@@ -1,11 +1,13 @@
-const tiktokDl = require("@sasmeee/tkdl");
+const { TiktokDL } = require("@tobyg74/tiktok-api-dl");
 const { YTDL } = require("ytdl-easy");
 const instagramDl = require("@sasmeee/igdl");
 const { fbdl2 } = require("vihangayt-fbdl");
 
 const getTikTok = async (req, res) => {
   const { url } = req.body;
-  const result = await tiktokDl(url);
+  const result = await TiktokDL(url, {
+    version: "v1",
+  });
   return res.status(200).json(result);
 };
 
